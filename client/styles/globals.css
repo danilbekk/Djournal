@@ -1,0 +1,32 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f2f2f2;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  outline: none;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: Roboto;
+
+}
+
+.content {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+}
