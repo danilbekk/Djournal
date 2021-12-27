@@ -10,6 +10,7 @@ import {
 } from '@mui/icons-material';
 import styles from './Header.module.scss';
 import Link from 'next/link';
+
 export const Header: React.FC = () => {
   return (
     <Paper classes={{ root: styles.root }} elevation={0}>
@@ -27,7 +28,7 @@ export const Header: React.FC = () => {
           <input placeholder="Поиск" />
         </div>
         <Button className={styles.penButton} variant="contained">
-          <PenIcon />
+          Новая запись
         </Button>
       </div>
       <div className="d-flex align-center">
@@ -38,7 +39,7 @@ export const Header: React.FC = () => {
           <NotificationIcon />
         </IconButton>
         <Avatar
-          className="ml-15"
+          className={styles.avatar}
           alt="Remy Sharp"
           src="https://i.pinimg.com/originals/2e/2e/21/2e2e2125ee53807c2d77b34773f84b5c.jpg"
         />

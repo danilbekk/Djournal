@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import 'macro-css';
 import { theme } from '../theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';

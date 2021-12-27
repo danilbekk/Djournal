@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Header } from '../components/Header';
+import { LeftMenu } from '../components/LeftMenu';
 import { Post } from '../components/Post';
 
 export default function Home() {
@@ -16,11 +17,16 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <div className="leftSide"></div>
+      <div className='wrapper'>
+      <div className="leftSide">
+        <LeftMenu />
+      </div>
       <div className="content">
         <Post />
       </div>
       <div className="rightSide"></div>
     </div>
+      </div>
+     
   );
 }
