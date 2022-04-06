@@ -7,6 +7,11 @@ export const theme = createTheme({
     },
   },
   components: {
+  MuiButtonBase: {
+    defaultProps: {
+      disableRipple: true,
+    }
+  },
     MuiPaper: {
       styleOverrides: {
         rounded: {
@@ -45,6 +50,12 @@ export const theme = createTheme({
             backgroundColor: 'white',
           },
         },
+        // containedPrimary: {
+        //   backgroundColor: '#4683d9',
+        // '&:hover': {
+        //   backgroundColor: '#437CCE',
+        // },
+        // },
       },
     },
   },

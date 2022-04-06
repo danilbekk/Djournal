@@ -7,6 +7,7 @@ import {
   FormatListBulletedOutlined as ListIcon,
 } from '@mui/icons-material';
 import styles from './LeftMenu.module.scss';
+import Link from 'next/link';
 
 export const LeftMenu: React.FC = () => {
   return (
@@ -25,10 +26,15 @@ export const LeftMenu: React.FC = () => {
           </Button>
         </li>
         <li>
-          <Button>
-            <RateIcon />
-            Рейтинг TJ
-          </Button>
+          <Link href="/rating">
+            <a>
+              <Button>
+                <RateIcon />
+                Рейтинг TJ
+              </Button>
+            </a>
+          </Link>
+
         </li>
         <li>
           <Button>
