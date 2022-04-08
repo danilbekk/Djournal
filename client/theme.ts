@@ -31,6 +31,7 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          borderRadius: '8px',
           textTransform: 'inherit',
           fontSize: 16,
           color: 'black',
