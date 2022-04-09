@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "eslintrc.js"  ],
+, "eslintrc.js", "components/tsx"  ],
   "exclude": [
     "node_modules"
   ]
