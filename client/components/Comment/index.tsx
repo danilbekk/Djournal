@@ -1,18 +1,21 @@
 import React from 'react';
-import { Button, IconButton, Menu, MenuItem, Paper, Typography } from '@mui/material';
+import { IconButton, Menu, MenuItem, Paper, Typography } from '@mui/material';
 import { MoreVert as MoreVertIcon } from '@mui/icons-material';
 
 import styles from './Comment.module.scss';
 
-interface CommentProps {
+interface CommentPostProps {
+  id: number;
   user: {
-    fullname: string;
+    fullName: string;
+    avatarUrl: string;
   };
   text: string;
-
+  createdAt: string;
 }
 
-export const Comment: React.FC<CommentProps> = ({ user, text }) => {
+
+export const Comment: React.FC<CommentPostProps> = ({ user, text, createdAt }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -27,15 +30,15 @@ export const Comment: React.FC<CommentProps> = ({ user, text }) => {
     <div className={styles.comment}>
       <div className={styles.userInfo}>
         <img
-          src='https://leonardo.osnova.io/d1d6a257-f314-54eb-b94c-430fb0086082/-/scale_crop/108x108/-/format/webp/'
+          src={user.avatarUrl}
           alt='Avatar'
 
         />
-        <b>Master Faster</b>
-        <span>5 часов</span>
+        <b>{user.fullName}</b>
+        <span>{createdAt}</span>
       </div>
       <Typography>
-        Ну это ещё не самый плохой вариант.
+        {text}
       </Typography>
       <span className={styles.replyBtn}>
         Ответить

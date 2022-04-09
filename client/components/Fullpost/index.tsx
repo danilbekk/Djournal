@@ -11,7 +11,7 @@ import styles from './FullPost.module.scss'
 export const FullPost = () => {
   return (
     <Paper elevation={0} className={styles.paper} >
-      <div style={{ margin: '0 auto', width: 680 }}>
+      <div className="container">
         <Typography variant="h5" fontWeight={'500'} className={styles.title}>
           Twitter начнёт тестировать функцию редактирования твитов «в ближайшие месяцы»
         </Typography>
@@ -26,23 +26,23 @@ export const FullPost = () => {
           <PostActions />
         </div>
         <div className='d-flex justify-between align-center mt-30 mb-30'>
-        <div className={styles.userInfo}>
-          <img
-            src='https://leonardo.osnova.io/d1d6a257-f314-54eb-b94c-430fb0086082/-/scale_crop/108x108/-/format/webp/'
-            alt='Avatar'
-          />
-          <b>Roberto Carlos</b>
-          <span>+1565</span>
-        </div>
-        <div>
-          <Button variant='contained' className='mr-15'>
-            <MessageIcon />
-          </Button>
-          <Button variant='contained'>
-            <UserAddIcon />
-            <b className='ml-10'>Подписаться</b>
-          </Button>
-        </div>
+          <div className={styles.userInfo}>
+            <img
+              src='https://leonardo.osnova.io/d1d6a257-f314-54eb-b94c-430fb0086082/-/scale_crop/108x108/-/format/webp/'
+              alt='Avatar'
+            />
+            <b>Roberto Carlos</b>
+            <span>+1565</span>
+          </div>
+          <div>
+            <Button variant='contained' className='mr-15'>
+              <MessageIcon />
+            </Button>
+            <Button variant='contained'>
+              <UserAddIcon />
+              <b className='ml-10'>Подписаться</b>
+            </Button>
+          </div>
         </div>
       </div>
     </Paper>
