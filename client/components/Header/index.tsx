@@ -42,9 +42,10 @@ export const Header: React.FC = () => {
           <input placeholder="Поиск" />
         </div>
         <Link href={'/write'} passHref>
-          <Button className={styles.penButton} variant="contained">
+          <Button className={styles.penButton} variant="contained" color='inherit'>
             Новая запись
           </Button>
+
         </Link>
 
       </div>

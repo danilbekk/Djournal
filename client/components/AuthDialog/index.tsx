@@ -1,10 +1,8 @@
 import {
   Button,
   Dialog,
-  DialogActions,
   DialogContent,
   DialogContentText,
-  Divider,
   TextField,
   Typography
 } from '@mui/material'
@@ -12,6 +10,8 @@ import { ArrowBack as ArrowBackIcon } from '@mui/icons-material'
 import React, { useState } from 'react'
 import { MainForm } from './forms/Main'
 import styles from './AuthDialog.module.scss';
+import { LoginForm } from './forms/Login';
+import { RegisterForm } from './forms/Register';
 
 interface AuthDialogProps {
   onClose: () => void;
@@ -19,9 +19,12 @@ interface AuthDialogProps {
 }
 
 export const AuthDialog: React.FC<AuthDialogProps> = ({ onClose, visible }) => {
-  const [formType, setFormType] = useState<'main' | 'email'>('main')
+  const [formType, setFormType] = useState<'main' | 'login' | 'register'>('main')
 
-  const onOpenLogin = () => setFormType('email')
+  const onOpenLogin = () => setFormType('login')
+  const onOpenRegister = () => setFormType('register')
+
+
   return (
     <Dialog
       open={visible}
@@ -38,42 +41,13 @@ export const AuthDialog: React.FC<AuthDialogProps> = ({ onClose, visible }) => {
                 "Вход в TJ"
               ) : (
                 <p onClick={() => setFormType('main')} className={styles.backTitle}>
-                  <ArrowBackIcon /> Войти через почту
+                  <ArrowBackIcon /> К авторизации
                 </p>
               )}
             </Typography>
-            {
-              formType === 'main' && (
-                <><MainForm onOpenLogin={onOpenLogin} /></>
-              )
-            }
-            {
-              formType === 'email' && (
-                <div >
-                  <form>
-                    <TextField
-                      className="mb-20"
-                      size="small"
-                      label="Почта"
-                      variant="outlined"
-                      fullWidth
-                      required
-                    />
-                    <TextField
-                      className="mb-20"
-                      size="small"
-                      label="Пароль"
-                      variant="outlined"
-                      fullWidth
-                      required
-                    />
-                    <Button color="primary" variant="contained">
-                      Войти
-                    </Button>
-                  </form>
-                </div>
-              )
-            }
+            {formType === 'main' && <MainForm onOpenLogin={onOpenLogin} />}
+            {formType === 'login' && <LoginForm onOpenRegister={onOpenRegister} />}
+            {formType === 'register' && <RegisterForm onOpenLogin={onOpenLogin} />}
           </div>
         </DialogContentText>
       </DialogContent>
